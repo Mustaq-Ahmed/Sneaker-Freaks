@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, withRouter } from 'react-router-dom'
 import { signout, isAuthenticated } from '../auth/helper'
-
+import { loadCart } from './helper/cartHelper'
 
 const currentTab = (history, path) => {
   if (history.location.pathname === path) {
@@ -18,7 +18,7 @@ function Menu({ history }) {
         <li className="nav-item">
           <Link style={currentTab(history, "/")} className='nav-link' to="/">Home</Link>
         </li>
-        <li className="nav-item">
+        <li className="nav-item" onClick={() => loadCart()}>
           <Link style={currentTab(history, "/cart")} className='nav-link' to="/cart">Cart</Link>
         </li>
 

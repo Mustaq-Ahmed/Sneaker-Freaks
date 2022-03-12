@@ -1,8 +1,8 @@
 
 export const addItemToCart = (item, next) => {
     let cart = []
-    if (typeof window != undefined) {  
-        if (localStorage.getItem("cart")) { 
+    if (typeof window != undefined) {
+        if (localStorage.getItem("cart")) {
             cart = JSON.parse(localStorage.getItem("cart"))  // Loading up entire cart into "cart variable"
         }
         cart.push({
@@ -18,6 +18,8 @@ export const loadCart = () => {
     if (typeof window != undefined) {
         if (localStorage.getItem("cart")) {
             return JSON.parse(localStorage.getItem("cart"))
+        } else {
+            return JSON.parse(localStorage.setItem("cart", JSON.stringify([])))
         }
     }
 }
@@ -41,7 +43,7 @@ export const removeItemFromCart = (productId) => {
 
 
 export const cartEmpty = (next) => {
-    if(typeof window !== undefined){
+    if (typeof window !== undefined) {
         localStorage.removeItem("cart")
         // after the payment is successfull showing the empty cart instead of undefined
         let cart = []
