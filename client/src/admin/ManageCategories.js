@@ -32,7 +32,7 @@ export default function ManageCategories() {
         deleteCategory(categoryId, user._id, token)
             .then((data) => {
                 if (data.error) {
-                    console.log(data.error);
+                    console.log("Delete Category Error: ",data.error);
                 } else {
                     //setCategories(data)
                     preLoad() //after CATE is DEL the page get reloaded and display CATE'S except DEL one
