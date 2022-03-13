@@ -27,7 +27,7 @@ export default function Signup() {
 
     const submitHandler = (e) => {
         e.preventDefault()
-        console.log(values)
+        // console.log(values)
         setValues({
             ...values,
             error: false
