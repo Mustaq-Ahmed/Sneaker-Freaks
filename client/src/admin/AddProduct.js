@@ -30,7 +30,7 @@ export default function AddProduct() {
     const preLoad = () => {
         getAllCategories()
             .then((data) => {
-                console.log(data);
+                // console.log(data);
                 if (data.error) {
                     setValues({
                         ...values,

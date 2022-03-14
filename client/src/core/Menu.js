@@ -30,7 +30,7 @@ function Menu({ history }) {
 
         {isAuthenticated() && isAuthenticated().user.role === 1 && (
           <li className="nav-item">
-            <Link style={currentTab(history, "/admin/dashboard")} className='nav-link' to="/admin/dashboard">A.Dashboard</Link>
+            <Link style={currentTab(history, "/admin/dashboard")} className='nav-link' to="/admin/dashboard">Dashboard</Link>
           </li>
         )}
 

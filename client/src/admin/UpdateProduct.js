@@ -12,6 +12,7 @@ export default function UpdateProduct({ match }) {
         name: "",
         description: "",
         price: "",
+        size: "",
         stock: "",
         photo: "",
         categories: [],
@@ -23,7 +24,7 @@ export default function UpdateProduct({ match }) {
         formData: ""
     })
     const {
-        name, description, price, stock, categories, category, isLoading, error, createdProduct, getaRedirect, formData
+        name, description, price, size, stock, categories, category, isLoading, error, createdProduct, getaRedirect, formData
     } = values
 
     const preLoad = (productId) => {
@@ -42,6 +43,7 @@ export default function UpdateProduct({ match }) {
                         name: data.name,
                         description: data.description,
                         price: data.price,
+                        size: data.size,
                         category: data.category._id,
                         stock: data.stock,
                         formData: new FormData()
@@ -95,6 +97,7 @@ export default function UpdateProduct({ match }) {
                         name: "",
                         description: "",
                         price: "",
+                        size: "",
                         stock: "",
                         photo: "",
                         isLoading: false,
@@ -173,6 +176,15 @@ export default function UpdateProduct({ match }) {
                     className="form-control"
                     placeholder="Price"
                     value={price}
+                />
+            </div>
+            <div className="form-group mb-3">
+                <input
+                    onChange={changeHandler("size")}
+                    type="number"
+                    className="form-control"
+                    placeholder="Size"
+                    value={size}
                 />
             </div>
             <div className="form-group mb-3">
